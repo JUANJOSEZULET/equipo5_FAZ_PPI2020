@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import * as movieAPI from '../../services/movieAPI';
 import './Deportes.scss';
 import { Breakpoint } from "react-socks";
 import { NavLink } from "react-router-dom";

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import * as movieAPI from '../../services/movieAPI';
 import './Contraloria.scss';
 import { Breakpoint } from "react-socks";
 import { NavLink } from "react-router-dom";
@@ -57,7 +56,11 @@ export default class Contraloria extends Component {
                             </section>
 
                             <section className="section">
-                                <p>Mi nombre es Laura Ceballos, tengo 17 años, llevo 14 años en la institución. Ahora me encuentro en el grado 11°2. Me considero una  persona  líder, quiero que mis compañeros y los estudiantes encuentren en mí un refugio para ser escuchados y yo ser su voz. Quiero que nuestros derechos y deberes sean cumplidos y apoyarlos en este proceso. </p>
+                                <p>Mi nombre es Laura Ceballos, tengo 17 años, llevo 14 
+                                    años en la institución. Ahora me encuentro en el grado 11°2. Me 
+                                    considero una  persona  líder, quiero que mis compañeros y los estudiantes 
+                                    encuentren en mí un refugio para ser escuchados y yo ser su voz. Quiero que 
+                                    nuestros derechos y deberes sean cumplidos y apoyarlos en este proceso. </p>
                             </section>
 
                         </div>
