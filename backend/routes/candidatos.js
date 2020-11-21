@@ -7,7 +7,7 @@ const mysqlConnection = require('../db/db');
 //METODO GET
 router.get('/contralores', (req, res) => {
 
-  mysqlConnection.query('SELECT cargo,apellidos,nombre,tarjeton FROM tblcandidato WHERE cargo="contralor"', (err, rows, fields) => {
+  mysqlConnection.query('SELECT cargo,apellidos,nombre,tarjeton, imagen FROM tblcandidato WHERE cargo="contralor"', (err, rows, fields) => {
     if (err) {
       console.log(err);
     }
@@ -16,7 +16,7 @@ router.get('/contralores', (req, res) => {
 });
 router.get('/personeros', (req, res) => {
 
-  mysqlConnection.query('SELECT cargo,apellidos,nombre,tarjeton FROM tblcandidato WHERE cargo="personero"', (err, rows, fields) => {
+  mysqlConnection.query('SELECT cargo,apellidos,nombre,tarjeton, imagen FROM tblcandidato WHERE cargo="personero"', (err, rows, fields) => {
     if (err) {
       console.log(err);
     }
@@ -28,12 +28,12 @@ router.get('/personeros', (req, res) => {
 //METODO POST
 router.post('/candidatos', (req, res) => {
 
-  const { nombre, apellidos, cargo, documento, tarjeton } = req.body;
+  const { nombre, apellidos, cargo, documento, tarjeton, imagen } = req.body;
 
-  let candidato = [nombre, apellidos, cargo, documento, tarjeton];
+  let candidato = [nombre, apellidos, cargo, documento, tarjeton, imagen];
 
-  let nuevoCandidato = `INSERT INTO tblcandidato (nombre, apellidos, cargo, documento, tarjeton)
-                    VALUES(?,?,?,?,?)`;
+  let nuevoCandidato = `INSERT INTO tblcandidato (nombre, apellidos, cargo, documento, tarjeton, imagen)
+                    VALUES(?,?,?,?,?,?)`;
   mysqlConnection.query(nuevoCandidato, candidato, (err, results, fields) => {
     if (err) {
       res.json({ message: `Error ` + err.message, })
@@ -46,13 +46,13 @@ router.post('/candidatos', (req, res) => {
 
 //METODO PUT
 router.put('/candidatos/:documento', (req, res) => {
-  const { nombre, apellidos, cargo, tarjeton } = req.body;
+  const { nombre, apellidos, cargo, tarjeton, imagen } = req.body;
 
-  let candidato = [nombre, apellidos, cargo, tarjeton];
+  let candidato = [nombre, apellidos, cargo, tarjeton, imagen];
 
   const { documento } = req.params;
-  mysqlConnection.query(`UPDATE tblcandidato SET nombre = ?,apellidos = ?, cargo= ?, tarjeton=? WHERE documento = ?`,
-    [nombre, apellidos, cargo, documento, tarjeton], (err, rows, fields) => {
+  mysqlConnection.query(`UPDATE tblcandidato SET nombre = ?,apellidos = ?, cargo= ?, tarjeton=?, imagen = ?WHERE documento = ?`,
+    [nombre, apellidos, cargo, documento, tarjeton, imagen], (err, rows, fields) => {
       if (err) {
         res.json({ status: 'error' + err.message, });
       }

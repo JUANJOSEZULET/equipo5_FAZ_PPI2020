@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Voto.scss';
 import { Breakpoint } from "react-socks";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import GoogleLogin from 'react-google-login';
 import atras from '../../assets/atras.png';
 import personeros from '../../assets/personeros.jpeg';
@@ -23,9 +23,9 @@ export default class Voto extends Component {
 
 
                                     <li className="sidebar-link-logo">
-                                        <NavLink>
+                                        <Link>
                                             <img src={atras} alt="logo" onClick={() => this.props.history.goBack()} />
-                                        </NavLink>
+                                        </Link>
                                     </li>
                                 </div>
                             </ul>
@@ -34,21 +34,21 @@ export default class Voto extends Component {
                     <div className="dashboard" data-testid="main__dashboard">
                         <div className="dashboard-card-wrapper">
                             <div class="contenedor">
-                                <NavLink to="/votopersoneria">
+                                <Link to="/votopersoneria">
                                     <input type="image" src={personeros} class="boton" onclick="return display()" />
                                     <div class="centrado"><h5>PERSONERÍA</h5></div>
-                                </NavLink>
+                                </Link>
                             </div>
 
                             <div class="contenedor2">
-                                <NavLink to="/votocontraloria">
+                                <Link to="/votocontraloria">
 
                                     <div class="contenedor2">
                                         <input type="image" src={contraloria} class="boton2" onclick="return display()" />
                                         <div class="centrado2"><h5>CONTRALORÍA</h5></div>
                                     </div>
 
-                                </NavLink>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -62,9 +62,9 @@ export default class Voto extends Component {
 
 
                                     <li className="sidebar-link-logo">
-                                        <NavLink>
+                                        <Link>
                                             <img src={atras} alt="logo" onClick={() => this.props.history.goBack()} />
-                                        </NavLink>
+                                        </Link>
                                     </li>
                                 </div>
                             </ul>
@@ -73,21 +73,21 @@ export default class Voto extends Component {
                     <div className="dashboard-mobile" data-testid="main__dashboard">
                         <div className="dashboard-card-wrapper">
                         <div class="contenedor">
-                                <NavLink to="/votopersoneria">
+                                <Link to="/votopersoneria">
                                     <input type="image" src={personeros} class="boton" onclick="return display()" />
                                     <div class="centrado"><h5>PERSONERÍA</h5></div>
-                                </NavLink>
+                                </Link>
                             </div>
 
                             <div class="contenedor2">
-                                <NavLink to="/votocontraloria">
+                                <Link to="/votocontraloria">
 
                                     <div class="contenedor2">
                                         <input type="image" src={contraloria} class="boton2" onclick="return display()" />
                                         <div class="centrado2"><h5>CONTRALORÍA</h5></div>
                                     </div>
 
-                                </NavLink>
+                                </Link>
                             </div>
                         </div>
                     </div>

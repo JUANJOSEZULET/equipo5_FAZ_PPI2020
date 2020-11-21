@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./Votocontraloria.scss";
 import { Breakpoint } from "react-socks";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import GoogleLogin from "react-google-login";
 import atras from "../../assets/atras.png";
 import G from "../../assets/G.png";
-import V from "../../assets/V.png";
 
 export default function Votocontraloria() {
   const [contralores, setContralores] = useState([]);
@@ -36,13 +35,13 @@ export default function Votocontraloria() {
             <ul className="sidebar-top">
               <div className="sidebar-links">
                 <li className="sidebar-link-logo">
-                  <NavLink>
+                <Link to="/voto">
                     <img
                       src={atras}
                       alt="logo"
-                      onClick={() => this.props.history.goBack()}
+                    
                     />
-                  </NavLink>
+                  </Link>
                 </li>
               </div>
             </ul>
@@ -62,7 +61,7 @@ export default function Votocontraloria() {
                     <h4>{contralor.cargo}</h4>
                     <h4>{contralor.tarjeton}</h4>
                     <div class="circular--portrait">
-                      <img src={G} />
+                      <img src={require("../../assets/" + contralor.imagen)} />
                     </div>
                   </section>
                   <section>
@@ -83,13 +82,13 @@ export default function Votocontraloria() {
             <ul className="sidebar-top">
               <div className="sidebar-links">
                 <li className="sidebar-link-logo">
-                  <NavLink>
+                <Link to="/voto">
                     <img
                       src={atras}
                       alt="logo"
-                      onClick={() => this.props.history.goBack()}
+                    
                     />
-                  </NavLink>
+                  </Link>
                 </li>
               </div>
             </ul>
@@ -108,17 +107,17 @@ export default function Votocontraloria() {
                     <h4>{contralor.cargo}</h4>
                     <h4>TARJETON: #{contralor.tarjeton}</h4>
                     <div class="circular--portrait">
-                      <img src={G} />
+                    <img src={require("../../assets/" + contralor.imagen)} />
                     </div>
                   </section>
                   <section>
-                    {/* <NavLink to="/validaciones"> */}
+                    {/* <Link to="/validaciones"> */}
                       
                     {visible ?
                         <button type="button" onClick={()=> sendCount()} className="button1">Votar</button>
                     : <button type="button" disabled className="button1">Votar</button>
                     }
-                    {/* </NavLink> */}
+                    {/* </Link> */}
                   </section>
                 </div>
               ))}
