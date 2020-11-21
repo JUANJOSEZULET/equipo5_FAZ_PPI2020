@@ -1,16 +1,39 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './Login.scss';
 import { Breakpoint } from "react-socks";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import GoogleLogin from 'react-google-login';
 import Button from "@material-ui/core/Button/Button";
 import atras from '../../assets/atras.png';
 
 
+const initialState = {
+    "documento": "",
+    "nombre":"",
+    "clave":""
+}
 
-export default class Login extends Component {
+export default function Login() {
+    const [data, setData] = useState(initialState)
 
-    render() {
+        function getValues(e){
+
+            setData({...data, [e.target.name]:e.target.value})
+        }
+
+         async function submitData(event){
+            event.preventDefault()
+            const response = await fetch('http://localhost:3001/api/usuario', {
+                method:'POST',
+                headers:{
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+
+        }
+
+
         return (
             <>
 
@@ -38,7 +61,7 @@ export default class Login extends Component {
 
                                 <div class="login-form">
                                     <div class="control-group">
-                                        <input type="text" class="login-field" value="" placeholder="usuario" id="login-name" />
+                                        <input type="text" class="login-field" value="" placeholder="usuario" id="login-name" name="user" />
                                         <label class="login-field-icon fui-user" for="login-name"></label>
                                     </div>
 
@@ -92,28 +115,58 @@ export default class Login extends Component {
                                     <div class="app-title">
                                         <h1>Iniciar sesión</h1>
                                     </div>
+                                    <form onSubmit={submitData}>
 
                                     <div class="login-form">
                                         <div class="control-group">
-                                            <input type="text" class="login-field" value="" placeholder="usuario" id="login-name" />
+                                            <input type="text"
+                                             class="login-field"
+                                             placeholder="usuario"
+                                             id="login-name"
+                                             onChange={(e) => getValues(e)} 
+                                             name="nombre"/>
                                             <label class="login-field-icon fui-user" for="login-name"></label>
                                         </div>
 
                                         <div class="control-group">
-                                            <input type="password" class="login-field" value="" placeholder="contraseña" id="login-pass" />
+                                            <input type="password" 
+                                            class="login-field" 
+                                            
+                                            placeholder="contraseña"
+                                            id="login-pass"
+                                            onChange={(e) => getValues(e)}
+                                            name="clave"
+                                            />
                                             <label class="login-field-icon fui-lock" for="login-pass"></label>
                                         </div>
+                                        <div class="control-group">
+                                            <input type="text" 
+                                            class="login-field" 
+                                            placeholder="Documento"
+                                             id="login-pass"
+                                             onChange={(e) => getValues(e)}
+                                             name="documento"
+                                             />
+                                            <label class="login-field-icon fui-lock" for="login-pass"></label>
+                                        </div>
+                                        <Link to="/menu">
+                                            <button type="submit">Click Here</button>
+                                        </Link>
+                                        {/* <button type="submit" onclick={() => submitData}>Registrarme</button> */}
+                                      
 
-                                        <GoogleLogin id="google"
+                                        {/* <GoogleLogin id="google"
 
                                             clientId="522834172402-o084f5vci1lrdv54ma9pdbl41slenpf8.apps.googleusercontent.com"
                                             buttonText="Iniciar sesion"
                                             uxMode="redirect"
                                             redirectUri="http://localhost:3000/menu"
                                             cookiePolicy={'single_host_origin'}
-                                        />
+                                        /> */}
+
 
                                     </div>
+                                    </form>
                                 </div>
                             </div>
                             <NavLink to="/menu">
@@ -128,4 +181,3 @@ export default class Login extends Component {
             </>
         );
     }
-}

@@ -115,7 +115,70 @@ export default class Noticias extends Component {
     
     </div>
 </section>
-       
+<section>
+<div className="section"> 
+<a
+          className="App-link"
+        
+        >
+          <h2>Suspenden clases y se da inicio a nuevas herramientas tecnologicas para el aprendizaje.</h2>
+        </a>
+ 
+  <h4>
+        Como todos sabemos se a dado inicio de una crisis mundial, una pandemia que dejara marcada a toda
+         la historia de este año 2020.
+         Esta crisis afecta las clases presenciales de manera acelerada, tanto asi que el gobierno a puesto 
+         la cancelacion de estas mismas. 
+         Pero estudiantes... Tranquilos, como plan B se a dado origen a nuevas herramientas tecnologicas 
+         que facilitaran el desarrollo del año escolar. Veamos esta situacion como oportunidades para aprender 
+         aun mas sobre la rama tecnologica que muy pronto formara parte de nuestra vida diaria. Antes que nada,
+         queridos estudiantes, cuidensen y cuiden a sus familias!
+          
+        
+
+    </h4>
+  <h4>
+        #QUEDATEENCASA
+
+    </h4>
+    
+    <img src="logo.png" className="" alt="" />
+    
+    
+    </div>
+</section>
+<section>
+<div className="section"> 
+<a
+          className="App-link"
+        
+        >
+          <h2>Suspenden clases y se da inicio a nuevas herramientas tecnologicas para el aprendizaje.</h2>
+        </a>
+ 
+  <h4>
+        Como todos sabemos se a dado inicio de una crisis mundial, una pandemia que dejara marcada a toda
+         la historia de este año 2020.
+         Esta crisis afecta las clases presenciales de manera acelerada, tanto asi que el gobierno a puesto 
+         la cancelacion de estas mismas. 
+         Pero estudiantes... Tranquilos, como plan B se a dado origen a nuevas herramientas tecnologicas 
+         que facilitaran el desarrollo del año escolar. Veamos esta situacion como oportunidades para aprender 
+         aun mas sobre la rama tecnologica que muy pronto formara parte de nuestra vida diaria. Antes que nada,
+         queridos estudiantes, cuidensen y cuiden a sus familias!
+          
+        
+
+    </h4>
+  <h4>
+        #QUEDATEENCASA
+
+    </h4>
+    
+    <img src="logo.png" className="" alt="" />
+    
+    
+    </div>
+</section>
       </header>
     </div>
                            
