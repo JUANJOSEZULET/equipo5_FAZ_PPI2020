@@ -5,19 +5,28 @@ const mysqlConnection = require('../db/db');
 
 
 //METODO GET
-router.get('/candidatos', (req, res) => {
+router.get('/contralores', (req, res) => {
 
-  mysqlConnection.query('SELECT * FROM tblcandidato ', (err, rows, fields) => {
-    if (!err) {
-      res.json(rows);
-    } else {
+  mysqlConnection.query('SELECT cargo,apellidos,nombre,tarjeton FROM tblcandidato WHERE cargo="contralor"', (err, rows, fields) => {
+    if (err) {
       console.log(err);
     }
+    return res.json(rows).status(200);
+  });
+});
+router.get('/personeros', (req, res) => {
+
+  mysqlConnection.query('SELECT cargo,apellidos,nombre,tarjeton FROM tblcandidato WHERE cargo="personero"', (err, rows, fields) => {
+    if (err) {
+      console.log(err);
+    }
+    return res.json(rows).status(200);
   });
 });
 
+
 //METODO POST
-router.post('/registrar_candidato', (req, res) => {
+router.post('/candidatos', (req, res) => {
 
   const { nombre, apellidos, cargo, documento, tarjeton } = req.body;
 
@@ -30,13 +39,13 @@ router.post('/registrar_candidato', (req, res) => {
       res.json({ message: `Error ` + err.message, })
       return console.error(err.message);
     }
-    res.json({ message: `Candidato registrado`, })
+    res.json({ message: `Candidato registrado`, success: true }).status(201)
   });
 });
 
 
 //METODO PUT
-router.put('/candidato/:documento', (req, res) => {
+router.put('/candidatos/:documento', (req, res) => {
   const { nombre, apellidos, cargo, tarjeton } = req.body;
 
   let candidato = [nombre, apellidos, cargo, tarjeton];
@@ -44,26 +53,22 @@ router.put('/candidato/:documento', (req, res) => {
   const { documento } = req.params;
   mysqlConnection.query(`UPDATE tblcandidato SET nombre = ?,apellidos = ?, cargo= ?, tarjeton=? WHERE documento = ?`,
     [nombre, apellidos, cargo, documento, tarjeton], (err, rows, fields) => {
-      if (!err) {
-        res.json({ status: 'Candidato actualizado' });
-      } else {
+      if (err) {
         res.json({ status: 'error' + err.message, });
-        console.log(err);
       }
+      return res.json({ status: 'Candidato actualizado', success: true });
     });
 });
 
 //DELETE
-router.delete('/candidato/:documento', (req, res) => {
+router.delete('/candidatos/:documento', (req, res) => {
   const { documento } = req.params;
   mysqlConnection.query('DELETE FROM tblcandidato WHERE documento = ?',
     [documento], (err, rows, fields) => {
-      if (!err) {
-        res.json({ status: 'Candidato eliminado' });
-      } else {
+      if (err) {
         res.json({ status: 'error' + err.message, });
-        console.log(err);
       }
+      return res.json({ status: 'Candidato eliminado', success: true });
     });
 });
 

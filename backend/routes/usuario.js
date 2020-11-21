@@ -19,26 +19,28 @@ router.get('/usuarios', (req, res) => {
 });
 
 //post 
-router.post('/nuevo_usuario', (req, res) => {
+router.post('/usuario', async (req, res) => {
+  console.log(req.body)
+  const { documento, nombre, clave } = req.body;
 
-  const { documento, correo, apellidos, nombre, perfil, clave } = req.body;
+  let usuario = [documento, nombre,clave];
 
-  let usuario = [documento, correo, apellidos, nombre, perfil, clave];
+  let userFound  = mysqlConnection.query('SELECT * FROM tblusuario WHERE documento=?')
+  if(userFound){
+    res.json({message: "El usuario ya esta registrado"})
+  }else{
+    let nuevoUsuario = `INSERT INTO tblusuario(documento,nombre,clave)
+                  VALUES(?,?,?)`;
+    mysqlConnection.query(nuevoUsuario, usuario, (err, results, fields) => {
+      if (err) {
+        console.error(err.message);
+      }
+      
+      return res.json({ message: `Usuario registrado`, }).status(201)
+    });
 
-  let nuevoUsuario = `INSERT INTO tblusuario(documento,correo,apellidos,nombre,perfil,clave)
-                VALUES(?,?,?,?,?,?)`;
-  mysqlConnection.query(nuevoUsuario, usuario, (err, results, fields) => {
-    if (err) {
-      return console.error(err.message);
-    }
-    res.json({ message: `Usuario registrado`, })
-  });
+  }
 });
-
-
-
-
-
 
 
 module.exports = router;
