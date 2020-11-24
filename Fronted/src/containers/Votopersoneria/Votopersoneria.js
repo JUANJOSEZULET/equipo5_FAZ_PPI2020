@@ -58,8 +58,8 @@ export default function Votopersoneria() {
                                         <h4>
                                             {personero.nombre} {personero.apellidos}
                                         </h4>
-                                        <h4>{personero.cargo}</h4>
-                                        <h4>{personero.tarjeton}</h4>
+                                        <h4>Cargo:{personero.cargo}</h4>
+                                        <h4>Tarjetón:{personero.tarjeton}</h4>
                                         <div class="circular--portrait">
                                         <img src={require("../../assets/" + personero.imagen)} />
                                         </div>

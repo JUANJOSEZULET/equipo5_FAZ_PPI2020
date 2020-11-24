@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Media.scss';
 import { Breakpoint } from "react-socks";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import atras from '../../assets/atras.png';
 import tecnica from '../../assets/tecnica.jpeg';
 
@@ -21,9 +21,9 @@ export default class Bosque extends Component {
                             <ul className="sidebar-top">
                                 <div className="sidebar-links">
                                     <li className="sidebar-link-logo">
-                                        <NavLink>
+                                        <Link>
                                             <img src={atras} alt="logo" onClick={() => this.props.history.goBack()} />
-                                        </NavLink>
+                                        </Link>
                                     </li>
                                 </div>
                             </ul>
@@ -53,12 +53,12 @@ export default class Bosque extends Component {
                             </div>
 
 
-                            <NavLink to="/">
+                            <Link to="/">
                                 <div>
 
 
                                 </div>
-                            </NavLink>
+                            </Link>
                         </div>
                     </div>
                 </Breakpoint>
@@ -69,9 +69,9 @@ export default class Bosque extends Component {
                             <ul className="sidebar-top">
                                 <div className="sidebar-links">
                                     <li className="sidebar-link-logo">
-                                        <NavLink>
+                                        <Link>
                                             <img src={atras} alt="logo" onClick={() => this.props.history.goBack()} />
-                                        </NavLink>
+                                        </Link>
                                     </li>
                                 </div>
                             </ul>
@@ -101,12 +101,12 @@ export default class Bosque extends Component {
 
 
 
-                            <NavLink to="/">
+                            <Link to="/">
                                 <div>
 
 
                                 </div>
-                            </NavLink>
+                            </Link>
                         </div>
                     </div>
                 </Breakpoint>

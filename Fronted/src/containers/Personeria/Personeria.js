@@ -8,12 +8,6 @@ import J from '../../assets/J.png';
 import M from '../../assets/M.png';
 import S from '../../assets/S.png';
 
-
-
-
-
-
-
 export default class Personeria extends Component {
 
     render() {

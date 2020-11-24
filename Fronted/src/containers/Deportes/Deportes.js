@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Deportes.scss';
 import { Breakpoint } from "react-socks";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import deporte1 from '../../assets/deporte1.jpeg';
 import atras from '../../assets/atras.png';
 
@@ -35,12 +35,12 @@ export default class Deportes extends Component {
                                 </div>
 
                             </div>
-                            <NavLink to="/">
+                            <Link to="/">
                                 <div>
 
 
                                 </div>
-                            </NavLink>
+                            </Link>
                         </div>
                     </div>
                 </Breakpoint>
@@ -51,9 +51,9 @@ export default class Deportes extends Component {
                             <ul className="sidebar-top">
                                 <div className="sidebar-links">
                                     <li className="sidebar-link-logo">
-                                    <NavLink>
+                                    <Link>
                                         <img src={atras} alt="logo"  onClick={() => this.props.history.goBack()} />
-                                        </NavLink>
+                                        </Link>
                                     </li>
                                 </div>
                             </ul>
@@ -81,12 +81,12 @@ export default class Deportes extends Component {
 
                             </div>
 
-                            <NavLink to="/">
+                            <Link to="/">
                                 <div>
 
 
                                 </div>
-                            </NavLink>
+                            </Link>
                         </div>
                     </div>
                 </Breakpoint>

@@ -43,9 +43,9 @@ export default function Login() {
                             <ul className="sidebar-top">
                                 <div className="sidebar-links">
                                     <li className="sidebar-link-logo">
-                                        <NavLink>
+                                        <Link>
                                             <img src={atras} alt="logo" onClick={() => this.props.history.goBack()} />
-                                        </NavLink>
+                                        </Link>
                                     </li>
                                 </div>
                             </ul>
@@ -53,34 +53,65 @@ export default function Login() {
                     </nav>
                     <div className="dashboard-login" data-testid="main__dashboard">
 
-                        <div class="login">
-                            <div class="login-screen">
-                                <div class="app-title">
-                                    <h1>Iniciar sesión</h1>
-                                </div>
-
-                                <div class="login-form">
-                                    <div class="control-group">
-                                        <input type="text" class="login-field" value="" placeholder="usuario" id="login-name" name="user" />
-                                        <label class="login-field-icon fui-user" for="login-name"></label>
+                    <div class="login">
+                                <div class="login-screen">
+                                    <div class="app-title">
+                                        <h1>Iniciar sesión</h1>
                                     </div>
+                                    <form onSubmit={submitData}>
 
-                                    <div class="control-group">
-                                        <input type="password" class="login-field" value="" placeholder="contraseña" id="login-pass" />
-                                        <label class="login-field-icon fui-lock" for="login-pass"></label>
+                                    <div class="login-form">
+                                        <div class="control-group">
+                                            <input type="text"
+                                             class="login-field"
+                                             placeholder="usuario"
+                                             id="login-name"
+                                             onChange={(e) => getValues(e)} 
+                                             name="nombre"/>
+                                            <label class="login-field-icon fui-user" for="login-name"></label>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <input type="password" 
+                                            class="login-field" 
+                                            
+                                            placeholder="contraseña"
+                                            id="login-pass"
+                                            onChange={(e) => getValues(e)}
+                                            name="clave"
+                                            />
+                                            <label class="login-field-icon fui-lock" for="login-pass"></label>
+                                        </div>
+                                        <div class="control-group">
+                                            <input type="text" 
+                                            class="login-field" 
+                                            placeholder="Documento"
+                                             id="login-pass"
+                                             onChange={(e) => getValues(e)}
+                                             name="documento"
+                                             />
+                                            <label class="login-field-icon fui-lock" for="login-pass"></label>
+                                        </div>
+                                        <Link to="/menu">
+                                            <button type="submit">Click Here</button>
+                                        </Link>
+                                        {/* <button type="submit" onclick={() => submitData}>Registrarme</button> */}
+                                      
+
+                                        {/* <GoogleLogin id="google"
+
+                                            clientId="522834172402-o084f5vci1lrdv54ma9pdbl41slenpf8.apps.googleusercontent.com"
+                                            buttonText="Iniciar sesion"
+                                            uxMode="redirect"
+                                            redirectUri="http://localhost:3000/menu"
+                                            cookiePolicy={'single_host_origin'}
+                                        /> */}
+
+
                                     </div>
-
-                                    <GoogleLogin id="google"
-
-                                        clientId="522834172402-o084f5vci1lrdv54ma9pdbl41slenpf8.apps.googleusercontent.com"
-                                        buttonText="Iniciar sesion"
-                                        uxMode="redirect"
-                                        redirectUri="http://localhost:3000/menu"
-                                        cookiePolicy={'single_host_origin'}
-                                    />
+                                    </form>
                                 </div>
                             </div>
-                        </div>
 
                         <NavLink to="/menu">
                             <div>
@@ -99,9 +130,9 @@ export default function Login() {
 
 
                                     <li className="sidebar-link-logo">
-                                        <NavLink>
+                                        <Link>
                                             <img src={atras} alt="logo" onClick={() => this.props.history.goBack()} />
-                                        </NavLink>
+                                        </Link>
                                     </li>
                                 </div>
                             </ul>
@@ -169,12 +200,12 @@ export default function Login() {
                                     </form>
                                 </div>
                             </div>
-                            <NavLink to="/menu">
+                            <Link to="/menu">
                                 <div>
 
 
                                 </div>
-                            </NavLink>
+                            </Link>
                         </div>
                     </div>
                 </Breakpoint>
