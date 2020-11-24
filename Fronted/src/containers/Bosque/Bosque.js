@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import './Bosque.scss';
 import { Breakpoint } from "react-socks";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import atras from '../../assets/atras.png';
 import libro from '../../assets/libro.jpg';
 import clase from '../../assets/clase.jpg';
@@ -29,9 +29,9 @@ export default class Bosque extends Component {
                             <ul className="sidebar-top">
                                 <div className="sidebar-links">
                                     <li className="sidebar-link-logo">
-                                    <NavLink>
+                                    <Link>
                                         <img src={atras} alt="logo"  onClick={() => this.props.history.goBack()} />
-                                        </NavLink>
+                                        </Link>
                                     </li>
                                 </div>
                             </ul>
@@ -97,12 +97,12 @@ Propuesta Lúdico-pedagógica que busca reconciliar, en el contexto de la escuel
                                 
 
             
-                            <NavLink to="/">
+                            <Link to="/">
                                 <div>
 
 
                                 </div>
-                            </NavLink>
+                            </Link>
                         </div>
                     </div>
                 </Breakpoint>
@@ -113,9 +113,9 @@ Propuesta Lúdico-pedagógica que busca reconciliar, en el contexto de la escuel
                             <ul className="sidebar-top">
                                 <div className="sidebar-links">
                                     <li className="sidebar-link-logo">
-                                    <NavLink>
+                                    <Link>
                                         <img src={atras} alt="logo"  onClick={() => this.props.history.goBack()} />
-                                        </NavLink>
+                                        </Link>
                                     </li>
                                 </div>
                             </ul>
@@ -177,12 +177,12 @@ Propuesta Lúdico-pedagógica que busca reconciliar, en el contexto de la escuel
     
  </ul>          
 
-                            <NavLink to="/">
+                            <Link to="/">
                                 <div>
 
 
                                 </div>
-                            </NavLink>
+                            </Link>
                         </div>
                     </div>
                 </Breakpoint>

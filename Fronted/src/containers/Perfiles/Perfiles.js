@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Perfiles.scss';
 import { Breakpoint } from "react-socks";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import GoogleLogin from 'react-google-login';
 import Gobierno from '../../assets/Gobierno.jpeg';
 import Noticias from '../../assets/Noticias.jpeg';
@@ -26,9 +26,9 @@ export default class Perfiles extends Component {
 
 
                                     <li className="sidebar-link-logo">
-                                        <NavLink>
+                                        <Link>
                                             <img src={atras} alt="logo" onClick={() => this.props.history.goBack()} />
-                                        </NavLink>
+                                        </Link>
                                     </li>
                                 </div>
                             </ul>
@@ -37,25 +37,25 @@ export default class Perfiles extends Component {
                     <div className="dashboard" data-testid="main__dashboard">
                         <div className="dashboard-card-wrapper">
                         <div class="contenedor">
-                            <NavLink to="/personeria">
+                            <Link to="/personeria">
                                 <input type="image" src={personeria} class="boton" onclick="return display()" />
                                 <div class="centrado"><h5>PERSONERÍA</h5></div>
-                                </NavLink>
+                                </Link>
                             </div>
 
                             <div class="contenedor2">
-                            <NavLink to="/contraloria">
+                            <Link to="/contraloria">
                                 <input type="image" src={contraloría} class="boton2" onclick="return display()" />
                                 <div class="centrado2"><h5>CONTRALORÍA</h5></div>
-                                </NavLink>
+                                </Link>
                             </div>
 
-                            <NavLink to="/">
+                            <Link to="/">
                                 <div>
 
 
                                 </div>
-                            </NavLink>
+                            </Link>
                         </div>
                     </div>
                 </Breakpoint>
@@ -68,9 +68,9 @@ export default class Perfiles extends Component {
 
 
                                     <li className="sidebar-link-logo">
-                                        <NavLink>
+                                        <Link>
                                             <img src={atras} alt="logo" onClick={() => this.props.history.goBack()} />
-                                        </NavLink>
+                                        </Link>
                                     </li>
                                 </div>
                             </ul>
@@ -80,24 +80,24 @@ export default class Perfiles extends Component {
                         <div className="dashboard-card-wrapper">
 
                             <div class="contenedor">
-                            <NavLink to="/personeria">
+                            <Link to="/personeria">
                             <input type="image" src={personeria} class="boton" onclick="return display()" />
                                 <div class="centrado"><h5>PERSONERÍA</h5></div>
-                                </NavLink>
+                                </Link>
                             </div>
 
                             <div class="contenedor2">
-                            <NavLink to="/contraloria">
+                            <Link to="/contraloria">
                             <input type="image" src={contraloría} class="boton2" onclick="return display()" />
                                 <div class="centrado2"><h5>CONTRALORÍA</h5></div>
-                                </NavLink>
+                                </Link>
                             </div>
-                            <NavLink to="/">
+                            <Link to="/">
                                 <div>
 
 
                                 </div>
-                            </NavLink>
+                            </Link>
                         </div>
                     </div>
                 </Breakpoint>

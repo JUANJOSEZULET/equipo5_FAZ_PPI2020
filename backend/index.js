@@ -10,12 +10,12 @@ app.use(express.urlencoded({extended:false}))
 const candidatos = require('./routes/candidatos');
 const usuarios = require('./routes/usuario');
 const votacion = require('./routes/votacion');
-const noticias = require('./routes/noticias');
+
 
 app.use('/api', candidatos);
 app.use('/api', usuarios);
 app.use('/api', votacion);
-app.use('/api', noticias);
+
 
 app.set('json spaces',2);
 

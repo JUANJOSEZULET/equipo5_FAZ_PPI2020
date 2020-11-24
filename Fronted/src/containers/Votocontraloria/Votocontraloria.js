@@ -18,8 +18,8 @@ export default function Votocontraloria() {
     setContralores(data);
   }
 
-  async function sendCount(id){
-    setCount(count + 1)
+  async function sendCount(id,votos){
+    //setCount(count + 1)
     // console.log(id)
     // console.log(`los votos del personero son: ${count}`)
     setVisible(false)
@@ -28,7 +28,7 @@ export default function Votocontraloria() {
       headers:{
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({voto: count, id: id})
+      body: JSON.stringify({voto: votos+1, id: id})
     })
 
   }
@@ -71,12 +71,12 @@ export default function Votocontraloria() {
                     <h4>{contralor.cargo}</h4>
                     <h4>{contralor.tarjeton}</h4>
                     <div class="circular--portrait">
-                      <img src={contralor.imagen} />
+                      <img src=  {contralor.imagen} />
                     </div>
                   </section>
                   <section>
                   {visible ?
-                        <button type="button" onClick={()=> sendCount(contralor.id)} className="button1">Votar</button>
+                        <button type="button" onClick={()=> sendCount(contralor.id,contralor.votos)} className="button1">Votar</button>
                     : <button type="button" disabled className="button1">Votar</button>
                     }
                   </section>
@@ -124,7 +124,7 @@ export default function Votocontraloria() {
                     {/* <Link to="/validaciones"> */}
                       
                     {visible ?
-                        <button type="button" onClick={()=> sendCount(contralor.id)} className="button1">Votar</button>
+                        <button type="button" onClick={()=> sendCount(contralor.id,contralor.votos)} className="button1">Votar</button>
                     : <button type="button" disabled className="button1">Votar</button>
                     }
                     {/* </Link> */}

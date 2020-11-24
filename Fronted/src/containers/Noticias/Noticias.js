@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './Noticias.scss';
 import {Breakpoint} from "react-socks";
-import {NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 import noticias1 from '../../assets/noticias1.png';
 
 
@@ -60,12 +60,12 @@ export default class Noticias extends Component {
        
       </header>
     </div>
-                            <NavLink to="/">
+                            <Link to="/">
                                 <div>
 
 
                                 </div>
-                            </NavLink>
+                            </Link>
                         </div>
                     </div>
                 </Breakpoint>
@@ -182,12 +182,12 @@ export default class Noticias extends Component {
       </header>
     </div>
                            
-                            <NavLink to="/">
+                            <Link to="/">
                                 <div>
 
 
                                 </div>
-                            </NavLink>
+                            </Link>
                         </div>
                     </div>
                 </Breakpoint>

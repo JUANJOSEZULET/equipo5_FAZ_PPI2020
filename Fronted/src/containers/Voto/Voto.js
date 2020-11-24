@@ -23,8 +23,8 @@ export default class Voto extends Component {
 
 
                                     <li className="sidebar-link-logo">
-                                        <Link>
-                                            <img src={atras} alt="logo" onClick={() => this.props.history.goBack()} />
+                                    <Link to="/Gobierno">
+                                            <img src={atras} alt="logo" />
                                         </Link>
                                     </li>
                                 </div>
@@ -62,8 +62,8 @@ export default class Voto extends Component {
 
 
                                     <li className="sidebar-link-logo">
-                                        <Link>
-                                            <img src={atras} alt="logo" onClick={() => this.props.history.goBack()} />
+                                    <Link to="/Gobierno">
+                                            <img src={atras} alt="logo" />
                                         </Link>
                                     </li>
                                 </div>

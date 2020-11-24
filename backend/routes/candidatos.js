@@ -7,7 +7,7 @@ const mysqlConnection = require('../db/db');
 //METODO GET
 router.get('/contralores', (req, res) => {
   
-  mysqlConnection.query('SELECT id,cargo,apellidos,nombre,tarjeton, imagen, votos FROM tblcandidato WHERE cargo="contralor"', (err, rows, fields) => {
+  mysqlConnection.query('SELECT id,cargo,apellidos,nombre,tarjeton, imagen, votos FROM tblcandidato WHERE cargo="Contralor"', (err, rows, fields) => {
     if (err) {
       console.log(err);
     }
@@ -20,30 +20,21 @@ router.put('/contralores/:id', (req,res) => {
   console.log(req.body)
   const {voto, id} = req.body
   console.log(`El usuario con el id ${id} tiene # ${voto}`)
-  const query = 'UPDATE tblcandidato SET voto = ? WHERE id = ?;'
-  mysqlConnection.query(query, [voto, id], (err, rows, fields))
+  const query = 'UPDATE tblcandidato SET votos = ? WHERE id = ?;'
+  mysqlConnection.query(query, [voto, id], (err, rows, fields)=> {
+    if (err) {
+      res.json({ status: 'error' + err.message, });
+    }
+    return res.json({ status: 'Candidato actualizado', success: true });
+  });
   // const {voto, nombre, tarjeton} = req.body
   // console.log(voto,nombre,tarjeton)
 })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 router.get('/personeros', (req, res) => {
 
-  mysqlConnection.query('SELECT cargo,apellidos,nombre,tarjeton, imagen FROM tblcandidato WHERE cargo="personero"', (err, rows, fields) => {
+  mysqlConnection.query('SELECT cargo,apellidos,nombre,tarjeton, imagen, votos, id FROM tblcandidato WHERE cargo="Personero"', (err, rows, fields) => {
     if (err) {
       console.log(err);
     }
