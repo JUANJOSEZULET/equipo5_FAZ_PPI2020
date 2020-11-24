@@ -19,11 +19,20 @@ export default function Votopersoneria() {
         setPersoneros(data);
     }
 
-    function sendCount() {
-        setCount(count + 1)
-        console.log(`los votos del personero son: ${count}`)
+    async function sendCount(id,votos){
+        //setCount(count + 1)
+        // console.log(id)
+        // console.log(`los votos del personero son: ${count}`)
         setVisible(false)
-    }
+        await fetch(`http://localhost:3001/api/contralores/${id}`,{
+          method: 'PUT',
+          headers:{
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({voto: votos+1, id: id})
+        })
+    
+      }
 
     useEffect(() => {
         fetchData();
@@ -66,7 +75,7 @@ export default function Votopersoneria() {
                                     </section>
                                     <section>
                                         {visible ?
-                                            <button type="button" onClick={() => sendCount()} className="button1">Votar</button>
+                                            <button type="button" onClick={() => sendCount(personero.id, personero.votos)} className="button1">Votar</button>
                                             : <button type="button" disabled className="button1">Votar</button>
                                         }
                                     </section>
@@ -112,7 +121,7 @@ export default function Votopersoneria() {
                                     </section>
                                     <section>
                                         {visible ?
-                                            <button type="button" onClick={() => sendCount()} className="button1">Votar</button>
+                                            <button type="button" onClick={() => sendCount(personero.id, personero.votos)} className="button1">Votar</button>
                                             : <button type="button" disabled className="button1">Votar</button>
                                         }
                                     </section>
