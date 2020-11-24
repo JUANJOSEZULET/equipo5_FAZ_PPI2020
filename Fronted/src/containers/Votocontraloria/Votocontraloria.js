@@ -14,13 +14,23 @@ export default function Votocontraloria() {
   async function fetchData() {
     const response = await fetch("http://localhost:3001/api/contralores");
     const data = await response.json();
+    console.log(data)
     setContralores(data);
   }
 
-  function sendCount(){
+  async function sendCount(id){
     setCount(count + 1)
-    console.log(`los votos del personero son: ${count}`)
+    // console.log(id)
+    // console.log(`los votos del personero son: ${count}`)
     setVisible(false)
+    await fetch(`http://localhost:3001/api/contralores/${id}`,{
+      method: 'PUT',
+      headers:{
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({voto: count, id: id})
+    })
+
   }
 
   useEffect(() => {
@@ -54,19 +64,19 @@ export default function Votocontraloria() {
               contralores.length > 0 &&
               contralores.map((contralor) => (
                 <div>
-                  <section key={contralor.name}>
+                  <section key={contralor.id}>
                     <h4>
                       {contralor.nombre} {contralor.apellidos}
                     </h4>
                     <h4>{contralor.cargo}</h4>
                     <h4>{contralor.tarjeton}</h4>
                     <div class="circular--portrait">
-                      <img src={require("../../assets/" + contralor.imagen)} />
+                      <img src={contralor.imagen} />
                     </div>
                   </section>
                   <section>
                   {visible ?
-                        <button type="button" onClick={()=> sendCount()} className="button1">Votar</button>
+                        <button type="button" onClick={()=> sendCount(contralor.id)} className="button1">Votar</button>
                     : <button type="button" disabled className="button1">Votar</button>
                     }
                   </section>
@@ -107,14 +117,14 @@ export default function Votocontraloria() {
                     <h4>{contralor.cargo}</h4>
                     <h4>TARJETON: #{contralor.tarjeton}</h4>
                     <div class="circular--portrait">
-                    <img src={require("../../assets/" + contralor.imagen)} />
+                    <img src={contralor.imagen} />
                     </div>
                   </section>
                   <section>
                     {/* <Link to="/validaciones"> */}
                       
                     {visible ?
-                        <button type="button" onClick={()=> sendCount()} className="button1">Votar</button>
+                        <button type="button" onClick={()=> sendCount(contralor.id)} className="button1">Votar</button>
                     : <button type="button" disabled className="button1">Votar</button>
                     }
                     {/* </Link> */}
