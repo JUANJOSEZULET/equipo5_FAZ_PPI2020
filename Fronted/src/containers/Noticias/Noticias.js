@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import './Noticias.scss';
 import {Breakpoint} from "react-socks";
-import {NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 import noticias1 from '../../assets/noticias1.png';
-
+import atras from '../../assets/atras.png';
 
 
 export default class Noticias extends Component {
@@ -13,6 +13,20 @@ export default class Noticias extends Component {
             <>
 
                 <Breakpoint large up>
+                <nav className="navbar-wrapper">
+                        <Breakpoint large up>
+                            <ul className="sidebar-top">
+                                <div className="sidebar-links">
+
+                                    <li className="sidebar-link-logo">
+                                        <Link to="/">
+                                            <img src={atras} alt="logo" />
+                                        </Link>
+                                    </li>
+                                </div>
+                            </ul>
+                        </Breakpoint>
+                    </nav>
                     <div className="dashboard" data-testid="main__dashboard">
                         <div className="dashboard-card-wrapper">
                            
@@ -60,17 +74,32 @@ export default class Noticias extends Component {
        
       </header>
     </div>
-                            <NavLink to="/">
+                            <Link to="/">
                                 <div>
 
 
                                 </div>
-                            </NavLink>
+                            </Link>
                         </div>
                     </div>
                 </Breakpoint>
 
                 <Breakpoint small down>
+                <nav className="navbar-wrapper">
+                        <Breakpoint small down>
+                            <ul className="sidebar-top">
+                                <div className="sidebar-links">
+
+                                    <li className="sidebar-link-logo">
+                                        <Link to="/Menu">
+                                            <img src={atras} alt="logo" />
+                                        </Link>
+                                    </li>
+                                </div>
+                            </ul>
+                        </Breakpoint>
+                    </nav>
+                  
                     <div className="dashboard-mobile" data-testid="main__dashboard">
                         <div className="dashboard-card-wrapper">
                         
@@ -115,16 +144,17 @@ export default class Noticias extends Component {
     
     </div>
 </section>
-       
+
+
       </header>
     </div>
                            
-                            <NavLink to="/">
+                            <Link to="/">
                                 <div>
 
 
                                 </div>
-                            </NavLink>
+                            </Link>
                         </div>
                     </div>
                 </Breakpoint>

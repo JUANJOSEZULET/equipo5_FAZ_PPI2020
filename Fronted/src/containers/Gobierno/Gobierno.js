@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Gobierno.scss';
 import { Breakpoint } from "react-socks";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import GoogleLogin from 'react-google-login';
 import atras from '../../assets/atras.png';
 import voto from '../../assets/voto.jpeg';
@@ -23,9 +23,9 @@ export default class Gobierno extends Component {
 
 
                                     <li className="sidebar-link-logo">
-                                        <NavLink>
-                                            <img src={atras} alt="logo" onClick={() => this.props.history.goBack()} />
-                                        </NavLink>
+                                    <Link to="/Menu">
+                                            <img src={atras} alt="logo"  />
+                                        </Link>
                                     </li>
                                 </div>
                             </ul>
@@ -34,17 +34,17 @@ export default class Gobierno extends Component {
                     <div className="dashboard" data-testid="main__dashboard">
                         <div className="dashboard-card-wrapper">
                             <div class="contenedor">
-                                <NavLink to="/perfiles">
+                                <Link to="/perfiles">
                                     <input type="image" src={candidatos} class="boton" onclick="return display()" />
                                     <div class="centrado"><h5>CANDIDATOS</h5></div>
-                                </NavLink>
+                                </Link>
                             </div>
 
                             <div class="contenedor2">
-                                <NavLink to="/voto">
+                                <Link to="/voto">
                                     <input type="image" src= {voto} class="boton2" onclick="return display()" />
                                     <div class="centrado2"><h5>VOTO ONLINE</h5></div>
-                                </NavLink>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -58,9 +58,9 @@ export default class Gobierno extends Component {
 
 
                                     <li className="sidebar-link-logo">
-                                        <NavLink>
-                                            <img src={atras} alt="logo" onClick={() => this.props.history.goBack()} />
-                                        </NavLink>
+                                    <Link to="/Menu">
+                                            <img src={atras} alt="logo" />
+                                        </Link>
                                     </li>
                                 </div>
                             </ul>
@@ -69,17 +69,17 @@ export default class Gobierno extends Component {
                     <div className="dashboard-mobile" data-testid="main__dashboard">
                         <div className="dashboard-card-wrapper">
                         <div class="contenedor">
-                                <NavLink to="/perfiles">
+                                <Link to="/perfiles">
                                     <input type="image" src={candidatos} class="boton" onclick="return display()" />
                                     <div class="centrado"><h5>CANDIDATOS</h5></div>
-                                </NavLink>
+                                </Link>
                             </div>
 
                             <div class="contenedor2">
-                                <NavLink to="/voto">
+                                <Link to="/voto">
                                     <input type="image" src={voto} class="boton2" onclick="return display()" />
                                     <div class="centrado2"><h5>VOTO ONLINE</h5></div>
-                                </NavLink>
+                                </Link>
                             </div>
                         </div>
                     </div>

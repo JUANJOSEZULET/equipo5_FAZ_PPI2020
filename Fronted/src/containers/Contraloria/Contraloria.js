@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Contraloria.scss';
 import { Breakpoint } from "react-socks";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import GoogleLogin from 'react-google-login';
 import atras from '../../assets/atras.png';
 import G from '../../assets/G.png';
@@ -23,9 +23,9 @@ export default class Contraloria extends Component {
 
 
                                     <li className="sidebar-link-logo">
-                                        <NavLink>
+                                        <Link>
                                             <img src={atras} alt="logo" onClick={() => this.props.history.goBack()} />
-                                        </NavLink>
+                                        </Link>
                                     </li>
                                 </div>
                             </ul>
@@ -75,9 +75,9 @@ export default class Contraloria extends Component {
 
 
                                     <li className="sidebar-link-logo">
-                                        <NavLink>
+                                        <Link>
                                             <img src={atras} alt="logo" onClick={() => this.props.history.goBack()} />
-                                        </NavLink>
+                                        </Link>
                                     </li>
                                 </div>
                             </ul>

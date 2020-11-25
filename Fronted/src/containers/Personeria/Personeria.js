@@ -1,18 +1,12 @@
 import React, { Component } from 'react';
 import './Personeria.scss';
 import { Breakpoint } from "react-socks";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import GoogleLogin from 'react-google-login';
 import atras from '../../assets/atras.png';
 import J from '../../assets/J.png';
 import M from '../../assets/M.png';
 import S from '../../assets/S.png';
-
-
-
-
-
-
 
 export default class Personeria extends Component {
 
@@ -28,9 +22,9 @@ export default class Personeria extends Component {
 
 
                                     <li className="sidebar-link-logo">
-                                        <NavLink>
-                                            <img src={atras} alt="logo" onClick={() => this.props.history.goBack()} />
-                                        </NavLink>
+                                    <Link to="/Menu">
+                                            <img src={atras} alt="logo"  />
+                                        </Link>
                                     </li>
                                 </div>
                             </ul>
@@ -87,9 +81,9 @@ export default class Personeria extends Component {
 
 
                                     <li className="sidebar-link-logo">
-                                        <NavLink>
-                                            <img src={atras} alt="logo" onClick={() => this.props.history.goBack()} />
-                                        </NavLink>
+                                        <Link to="/Menu">
+                                            <img src={atras} alt="logo" />
+                                        </Link>
                                     </li>
                                 </div>
                             </ul>
