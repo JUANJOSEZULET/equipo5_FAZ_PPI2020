@@ -95,28 +95,28 @@ export default class Menu extends Component {
                             <div class="contenedor">
                                 <NavLink to="/gobierno">
                                     <input type="image" src={Gobierno} class="boton" onclick="return display()" />
-                                    <div class="centrado"><h2>GOBIERNO ESCOLAR</h2></div>
+                                    <div class="centrado"><h4>GOBIERNO ESCOLAR</h4></div>
                                 </NavLink>
                             </div>
 
                             <div class="contenedor2">
                                 <NavLink to="/noticias">
                                     <input type="image" src={Noticias} class="boton2" onclick="return display()" />
-                                    <div class="centrado2"><h5>NOTICIAS INSTITUCIONALES</h5></div>
+                                    <div class="centrado2"><h4>NOTICIAS INSTITUCIONALES</h4></div>
                                 </NavLink>
                             </div>
 
                             <div class="contenedor3">
                                 <NavLink to="/deportes">
                                     <input type="image" src={Deportes} class="boton3" onclick="return display()" />
-                                    <div class="centrado3"><h5>DEPORTES</h5></div>
+                                    <div class="centrado3"><h4>DEPORTES</h4></div>
                                 </NavLink>
                             </div>
 
                             <div class="contenedor4">
                                 <NavLink to="/proyectos">
                                     <input type="image" src={Proyectos} class="boton4" onclick="return display()" />
-                                    <div class="centrado4"><h5>PROYECTOS INSTITUCIONALES</h5></div>
+                                    <div class="centrado4"><h4>PROYECTOS INSTITUCIONALES</h4></div>
                                 </NavLink>
                             </div>
                             <NavLink to="/">

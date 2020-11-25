@@ -23,7 +23,7 @@ export default class Gobierno extends Component {
 
 
                                     <li className="sidebar-link-logo">
-                                    <Link to="/Gobierno">
+                                    <Link to="/Menu">
                                             <img src={atras} alt="logo"  />
                                         </Link>
                                     </li>

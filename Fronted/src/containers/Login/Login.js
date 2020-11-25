@@ -3,9 +3,9 @@ import './Login.scss';
 import { Breakpoint } from "react-socks";
 import { NavLink, Link } from "react-router-dom";
 import GoogleLogin from 'react-google-login';
-import Button from "@material-ui/core/Button/Button";
+import { Button } from 'semantic-ui-react'
 import atras from '../../assets/atras.png';
-
+import 'semantic-ui-css/semantic.min.css';
 
 const initialState = {
     "documento": "",
@@ -43,7 +43,7 @@ export default function Login() {
                         <ul className="sidebar-top">
                             <div className="sidebar-links">
                                 <li className="sidebar-link-logo">
-                                <Link to="/header">
+                                    <Link to="/">
                                         <img src={atras} alt="logo" />
                                     </Link>
                                 </li>
@@ -64,7 +64,7 @@ export default function Login() {
                                     <div class="control-group">
                                         <input type="text"
                                             class="login-field"
-                                            placeholder="usuario"
+                                            placeholder="Nombres"
                                             id="login-name"
                                             onChange={(e) => getValues(e)}
                                             name="nombre" />
@@ -75,7 +75,7 @@ export default function Login() {
                                         <input type="password"
                                             class="login-field"
 
-                                            placeholder="contraseña"
+                                            placeholder="Contraseña"
                                             id="login-pass"
                                             onChange={(e) => getValues(e)}
                                             name="clave"
@@ -93,7 +93,7 @@ export default function Login() {
                                         <label class="login-field-icon fui-lock" for="login-pass"></label>
                                     </div>
                                     <Link to="/menu">
-                                        <button type="submit" onclick={() => submitData}>Iniciar</button>
+                                        <button class="ui button" type="submit" onclick={() => submitData}>Iniciar</button>
                                     </Link>
                                     {/* <button type="submit" onclick={() => submitData}>Registrarme</button> */}
 
@@ -130,7 +130,7 @@ export default function Login() {
 
 
                                 <li className="sidebar-link-logo">
-                                <Link to="/Header">
+                                    <Link to="/">
                                         <img src={atras} alt="logo" />
                                     </Link>
                                 </li>
@@ -152,7 +152,7 @@ export default function Login() {
                                         <div class="control-group">
                                             <input type="text"
                                                 class="login-field"
-                                                placeholder="usuario"
+                                                placeholder="Nombres"
                                                 id="login-name"
                                                 onChange={(e) => getValues(e)}
                                                 name="nombre" />
@@ -163,7 +163,7 @@ export default function Login() {
                                             <input type="password"
                                                 class="login-field"
 
-                                                placeholder="contraseña"
+                                                placeholder="Contraseña"
                                                 id="login-pass"
                                                 onChange={(e) => getValues(e)}
                                                 name="clave"
@@ -181,7 +181,7 @@ export default function Login() {
                                             <label class="login-field-icon fui-lock" for="login-pass"></label>
                                         </div>
                                         <Link to="/menu">
-                                        <button type="submit" onclick={() => submitData}>Iniciar</button>
+                                            <button class="ui button" type="submit" onclick={() => submitData}>Iniciar</button>
                                         </Link>
                                         {/* <button type="submit" onclick={() => submitData}>Registrarme</button> */}
 

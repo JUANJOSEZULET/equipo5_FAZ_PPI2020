@@ -71,7 +71,7 @@ export default function Votocontraloria() {
                     <h4>{contralor.cargo}</h4>
                     <h4>{contralor.tarjeton}</h4>
                     <div class="circular--portrait">
-                      <img src=  {contralor.imagen} />
+                    <img src={require("../../assets/" + contralor.imagen)} />
                     </div>
                   </section>
                   <section>
@@ -117,7 +117,7 @@ export default function Votocontraloria() {
                     <h4>{contralor.cargo}</h4>
                     <h4>TARJETON: #{contralor.tarjeton}</h4>
                     <div class="circular--portrait">
-                    <img src={contralor.imagen} />
+                    <img src={require("../../assets/" + contralor.imagen)} />
                     </div>
                   </section>
                   <section>
